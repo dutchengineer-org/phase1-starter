@@ -49,6 +49,33 @@ phase1-starter/
         └── __main__.py     # `python -m <yourpkg>` runs a baseline score end to end (M1)
 ```
 
+## Fill in
+
+Every file in this repo is empty — you write all of it. The list below is what each empty
+file becomes, in the module that fills it. Rename `census_pipeline` to your own package name
+(update `pyproject.toml` and the folder together).
+
+**Module 1 — Python for ML Engineers**
+- `pyproject.toml` — package metadata and dependencies, so `pip install -e .` works.
+- `.gitignore` — ignore `__pycache__/`, `.venv/`, `*.egg-info/`, and the tooling caches.
+- `src/census_pipeline/__init__.py` — the importable API (re-export your public functions).
+- `src/census_pipeline/data.py` — load the Adult / Census Income data, return `(df, y)`.
+- `src/census_pipeline/__main__.py` — `python -m census_pipeline` runs a baseline score end to end.
+
+**Module 2 — Data Wrangling & Pipelines**
+- `src/census_pipeline/features.py` — a deterministic feature transform, fit on train, applied identically at serve.
+
+**Module 3 — Numerical & Statistical Foundations**
+- `src/census_pipeline/split.py` — a leakage-free split: split raw, fit the transform on train only, apply to both.
+
+**Module 4 — Classical Machine Learning**
+- `src/census_pipeline/model.py` — train and score on the pre-split matrix, with an imbalance-aware metric.
+- `src/census_pipeline/artifact.py` — bundle the fitted transform + calibrated model + a model card into one saved, reloadable file.
+
+Read the reference package (below) to see the finished shape of each file before you write
+your own. Build each module's piece on its own branch and merge to `main` when it meets the
+rubric.
+
 ## How to use it
 
 1. **Fork** this repo to your own account (see the *Git Basics* lesson if "fork" is new).
