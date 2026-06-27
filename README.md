@@ -80,7 +80,7 @@ rubric.
 
 1. **Fork** this repo to your own account (see the *Git Basics* lesson if "fork" is new).
 2. Clone your fork locally and build to each module's spec and rubric.
-3. Work on a **branch** per module (`git checkout -b m1-package`), open a pull request, and
+3. Work on a **branch** per module (`git checkout -b m1-package-setup`), open a pull request, and
    merge to `main` once it meets the rubric — `main` stays the last-good version of your
    product.
 
