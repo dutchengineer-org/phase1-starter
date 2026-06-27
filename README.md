@@ -17,15 +17,37 @@ so you copy an answer.
 
 ## What you build on it
 
-| Module | What you add |
-|---|---|
-| M1 — Python for ML Engineers | A clean, importable and runnable package: typed data contracts, a `__main__` entry point, a dependency lock. |
-| M2 — Data Wrangling & Pipelines | A deterministic feature transform, reused at train and serve time. |
-| M3 — Numerical & Statistical Foundations | A leakage-free train/val/test split and a documented baseline. |
-| M4 — Classical Machine Learning | A trained, serialized, calibrated model that beats your M3 baseline. |
+| Module | What you add | Lesson |
+|---|---|---|
+| M1 — Python for ML Engineers | A clean, importable and runnable package: typed data contracts, a `__main__` entry point, a dependency lock. | https://learn.dutchengineer.org/courses/python-for-ml-engineers/ |
+| M2 — Data Wrangling & Pipelines | A deterministic feature transform, reused at train and serve time. | https://learn.dutchengineer.org/courses/data-wrangling-pipelines/ |
+| M3 — Numerical & Statistical Foundations | A leakage-free train/val/test split and a documented baseline. | https://learn.dutchengineer.org/courses/numerical-statistical-foundations/ |
+| M4 — Classical Machine Learning | A trained, serialized, calibrated model that beats your M3 baseline. | https://learn.dutchengineer.org/courses/classical-machine-learning/ |
 
 By the end of Module 4 your repository is the trained product that the **Phase 2 (ship)**
 starter is built from.
+
+## Approximate structure to build out
+
+This is the shape your repo grows into across M1–M4. The starter ships the skeleton; you
+write the contents. Names are a guide, not a rule — match the layout, not the spelling.
+
+```
+phase1-starter/
+├── pyproject.toml          # package metadata + pinned dependencies (M1, M4)
+├── README.md
+├── .gitignore
+├── data/
+│   └── adult.csv           # the Adult / Census Income dataset
+└── src/
+    └── <yourpkg>/
+        ├── __init__.py     # the importable API (M1)
+        ├── data.py         # load the Adult / Census data (M1)
+        ├── features.py     # the deterministic feature transform (M2)
+        ├── split.py        # leakage-free train/val/test split (M3)
+        ├── model.py        # train + calibrate the model (M4)
+        └── __main__.py     # `python -m <yourpkg>` runs a baseline score end to end (M1)
+```
 
 ## How to use it
 
